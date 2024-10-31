@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Calificaciones</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nombre Completo</th>
+                    <th>Periodo 1</th>
+                    <th>Periodo 2</th>
+                    <th>Resultado Final</th>
+                </tr>
+            </thead>
+        <tbody
+        data-sheetdb-url="https://sheetdb.io/api/v1/czjbdct1kam6t"
+        data-sheetdb-sort-by="nombre completo"
+        data-sheetdb-sort-order="asc"
+        data-sheetdb-limit="100"
+        data-sheetdb-offset="0">  
+
+        <tr>
+        <td>{{Student}}</td>
+        <td>{{name}}</td>
+        <td>{{Period1}}</td>
+        <td>{{Period2}}</td>
+        <td>{{Finalresult}}</td>
+        </tr>
+        </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="panel.html">
+                <button type="button" class="add-student-button">Añadir Nuevo Estudiante</button>
+            </a>
+        </div>
+
+        </div>
+        <script src="https://sheetdb.io/handlebars.js"></script>
+
+</body>
+</html>

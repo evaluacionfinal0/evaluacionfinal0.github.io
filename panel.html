@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Alumno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Alumnos</h1>
+        <form action="https://sheetdb.io/api/v1/czjbdct1kam6t" method="post" id="myForm">
+            <div class="form-group">
+                <label for="id">Matricula:</label>
+                <input type="number" id="id" name="Student" min="1" max="99999" required>
+            </div>
+
+            <div class="form-group">
+                <label for="name">Nombre Completo:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Periodo1">Periodo 1:</label>
+                <input type="number" id="Periodo1" name="Period1" min="1" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Periodo2">Periodo 2:</label>
+                <input type="number" id="Periodo2" name="Period2" min="1" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="resultado">Resultado Final:</label>
+                <input type="number" id="resultado" name="Finalresult" min="1" max="100" required>
+            </div>
+            <a href="./index.html" class="btn">Volver al Inicio</a>
+            <button type="submit">Registrar Alumno</button>
+        </form>
+    </div>
+
+    <script>
+        var form = document.getElementById('myForm');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("myForm")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            window.location.href = './thanksPage.html';
+          });
+        });
+      </script>
+
+
+
+</body>
+</html>
